@@ -1,5 +1,6 @@
 #!/bin/bash
-DELAY="$1"
+SPEED="$1"
+DELAY="$2"
 TONE_WIGGLE=$(seq 50 | shuf | head -1)
 
 # Get one quote
@@ -9,7 +10,7 @@ TONE_WIGGLE=$(seq 50 | shuf | head -1)
 sleep 1
 
 # Send morse
-cat one_quote | cw -e -m -g "$DELAY" -w 20 -t $(( 650 + $TONE_WIGGLE )) -v 40
+cat one_quote | cw -e -m -g "$DELAY" -w "$SPEED" -t $(( 650 + $TONE_WIGGLE )) -v 40
 
 # Print quote
 cat one_quote

@@ -29,15 +29,6 @@ def iter_quotes(quotes_file=QUOTES_FILE):
                 quotes = []
 
 if __name__ == '__main__':
-    #count = 0
-    #for q, a in iter_quotes():
-    #    if len(q) >= 30 and len(q) <= 60:
-    #        count += 1
-
-    #print(f"Found {count} quotes between 30 and 60 characters")
-
-    #sys.exit()
-
     # Print out one quote
     # Limit to quotes of lengths between 40 and 100
     quote = "x" * 500
