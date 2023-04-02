@@ -1,15 +1,15 @@
 #!/bin/bash
-# TODO Add parameter for speed farnsworth delay (g)
-# TODO Add some randomness to pitch around selected value
+DELAY="$1"
+TONE_WIGGLE=$(seq 50 | shuf | head -1)
 
-# Get one quote TODO add parameters for length
+# Get one quote
 ./parse_quotes.py > one_quote
 
 # Wait a second before starting
 sleep 1
 
 # Send morse
-cat one_quote | cw -e -m -g 28 -w 20 -t 680 -v 20
+cat one_quote | cw -e -m -g "$DELAY" -w 20 -t $(( 650 + $TONE_WIGGLE )) -v 40
 
 # Print quote
 cat one_quote
