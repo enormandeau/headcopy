@@ -4,7 +4,7 @@ DELAY="$2"
 TONE_WIGGLE=$(seq 50 | shuf | head -1)
 
 # Get one quote
-./parse_quotes.py > one_quote
+./parse_quotes.py 40 80 > one_quote
 
 # Wait a second before starting
 sleep 1
