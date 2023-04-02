@@ -43,7 +43,7 @@ if __name__ == '__main__':
     quote = "x" * 500
     author = "x" * 500
 
-    while len(quote + author) > 60 or len(quote + author) < 20:
+    while len(quote + author) > 80 or len(quote + author) < 40:
         quote, author = random.choice(list(iter_quotes()))
 
     print(quote)
