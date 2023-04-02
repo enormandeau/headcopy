@@ -41,7 +41,9 @@ if __name__ == '__main__':
     # Print out one quote
     # Limit to quotes of lengths between 40 and 100
     quote = "x" * 500
-    while len(quote) > 60 or len(quote) < 30:
+    author = "x" * 500
+
+    while len(quote + author) > 60 or len(quote + author) < 20:
         quote, author = random.choice(list(iter_quotes()))
 
     print(quote)
