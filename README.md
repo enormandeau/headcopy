@@ -6,15 +6,16 @@ Uses `cw` program to sound the morse
 
 ## Usage
 
-Launch with `./headcopy <DELAY> <SPEED>` or add your headcopy directory to your
-"$PATH" variable and launch with `headcopy <DELAY> <SPEED>`.
+Launch with `./headcopy <SPEED> <DELAY>` or add your headcopy directory to your
+"$PATH" variable and launch with `headcopy <SPEED> <DELAY>`.
 
 ## Parameters
 
-- `DELAY` acts as a Farnsworth factor. At zero, you are using full speed (20
-wpm by default).
-
 - `SPEED` is the number of words per minute (wpm)
+
+- `DELAY` acts as a Farnsworth factor. This is the amount of extra spacing 
+   added between characters, in units of 'dot lenghts'. At zero, you are 
+   using full speed (20 wpm by default).
 
 For example, at `SPEED=20` and `DELAY=26`, you are using an effective speed of
 10 wpm.
