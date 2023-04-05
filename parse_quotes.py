@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Parse Quote and quotes files modified from pyquotes:
-    https://github.com/ik5/pyquotes
+"""Parse Quote and quotes files
+
+Modified from pyquotes https://github.com/ik5/pyquotes
 """
 
 # Modules
@@ -9,7 +10,8 @@ import sys
 
 # Functions
 def iter_quotes(quotes_file):
-    "Walks the quotes file, yields a (quote, author) tuple for each quote"
+    """Return one (quote, author) tuple per quote in db
+    """
 
     with open(quotes_file) as f:
         quotes = []
@@ -17,6 +19,7 @@ def iter_quotes(quotes_file):
         for line in f:
             if line != SEPARATOR:
                 quotes.append(line)
+
             else:
                 if quotes[-1].startswith(AUTHOR_MARK):
                     author = quotes.pop().strip()
