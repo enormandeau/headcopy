@@ -1,6 +1,7 @@
 # headcopy
 
-Learn head copying morse code and help instant character recognition
+Learn head copying morse code and help instant character recognition by playing
+random quotes at specified word per minute speed and delay.
 
 Uses `cw` program to sound the morse
 
