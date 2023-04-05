@@ -1,16 +1,27 @@
 #!/bin/bash
-SPEED="$1"
-DELAY="$2"
-TONE_WIGGLE=$(seq 50 | shuf | head -1)
+
+# Parameters
+SPEED="$1"  # Words per minute
+DELAY="$2"  # Defaults to zero if not specified
+
+# Globals
+MIN_QUOTE_LEN=40        # Minimum length of quote + author
+MAX_QUOTE_LEN=80        # Maximum length of quote + author
+VOLUME_PERCENT=40       # Volume in percent
+DELAY_BEFORE_START=1    # Num seconds to wait before starting
+
+BASE_TONE=650           # Base tonality in Hz
+TONE_WIGGLE=$(seq 50 | shuf | head -1)  # Add a number of Hz from 1 to 50
 
 # Get one quote
-./parse_quotes.py 40 80 > one_quote
+./parse_quotes.py "$MIN_QUOTE_LEN" "$MAX_QUOTE_LEN" > one_quote
 
-# Wait a second before starting
-sleep 1
+# Wait a second before sending morse
+sleep "$DELAY_BEFORE_START"
 
 # Send morse
-cat one_quote | cw -e -m -g "$DELAY" -w "$SPEED" -t $(( 650 + $TONE_WIGGLE )) -v 40
+cat one_quote | cw -e -m -g "$DELAY" -w "$SPEED" \
+    -t $(( ${BASE_TONE} + ${TONE_WIGGLE} )) -v "$VOLUME_PERCENT"
 
 # Print quote
 cat one_quote
