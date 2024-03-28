@@ -24,4 +24,6 @@ cat one_quote | cw -e -m -g "$DELAY" -w "$SPEED" \
     -t $(( ${BASE_TONE} + ${TONE_WIGGLE} )) -v "$VOLUME_PERCENT"
 
 # Print quote
+echo
 cat one_quote
+echo
