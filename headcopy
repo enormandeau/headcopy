@@ -25,5 +25,8 @@ cat one_quote | cw -e -m -g "$DELAY" -w "$SPEED" \
 
 # Print quote
 echo
+echo
+echo "--"
 cat one_quote
+echo "--"
 echo
