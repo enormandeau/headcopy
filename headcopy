@@ -1,4 +1,5 @@
 #!/bin/bash
+# TODO Redo this in Python using os.system to call `cw`
 
 # Parameters
 SPEED="$1"  # Words per minute
